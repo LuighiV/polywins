@@ -51,6 +51,7 @@ raise_or_minimize() {
 	if [ "$(get_active_wid)" = "$1" ]; then
 		wmctrl -ir "$1" -b toggle,hidden
 	else
+		wmctrl -ir "$1" -b remove,hidden
 		wmctrl -ia "$1"
 	fi
 }
